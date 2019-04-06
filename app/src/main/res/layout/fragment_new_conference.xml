@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewCOnference"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:id="@+id/conf_name"
+        android:textSize="30dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:hint="Date"
+        android:id="@+id/date"
+        android:textSize="30dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:hint="venue"
+        android:id="@+id/venue"
+        android:textSize="30dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:hint="description"
+        android:id="@+id/description"
+        android:textSize="30dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SaveConf"
+        android:textSize="30dp"
+        android:text="Save" />
+</LinearLayout>
