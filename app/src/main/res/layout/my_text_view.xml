@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<ImageView
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/deleteImage"
+    android:padding="@dimen/cardview_default_elevation"
+    android:src="@drawable/common_full_open_on_phone"
+    />
+    <TextView
+        android:id="@+id/tv1"
+        android:text="name"
+        android:layout_width="250dp"
+        android:layout_toRightOf="@id/deleteImage"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/cardview_default_elevation"
+        android:textSize="40sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:text="date"
+        android:layout_width="250dp"
+        android:layout_below="@id/tv1"
+        android:layout_toRightOf="@id/deleteImage"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/cardview_default_elevation"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/tv3"
+        android:text="venue"
+        android:layout_width="250dp"
+        android:layout_below="@id/tv2"
+        android:layout_toRightOf="@id/deleteImage"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/cardview_default_elevation"
+        android:textSize="20sp" />
+
+
+
+</RelativeLayout>

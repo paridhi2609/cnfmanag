@@ -11,13 +11,11 @@
             android:id="@+id/all_conf"
             android:title="All conferences" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/editUSerPRo"
+            android:title="Edit Profile"/>
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/viewProfile"
+            android:title="Profile"/>
     </group>
 
     <item android:title="Communicate">

@@ -84,13 +84,18 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.create_new_conf) {
             // Handle the Create new conference button
             fragmentManager=getSupportFragmentManager();
-            fragmentManager.beginTransaction().add(R.id.fragment_container,new NewCOnference()).commit();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,new NewCOnference()).commit();
         } else if (id == R.id.all_conf) {
-            fragmentManager=getSupportFragmentManager();
-            fragmentManager.beginTransaction().add(R.id.fragment_container,new allConferencesFragment()).commit();
-        } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
+            fragmentManager=getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,new allConferencesFragment()).commit();
+        } else if (id == R.id.editUSerPRo) {
+            fragmentManager=getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, new EditProfileFragment()).commit();
+
+        } else if (id == R.id.viewProfile) {
+            fragmentManager=getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, new ViewProfileFragment()).commit();
 
         } else if (id == R.id.nav_share) {
 

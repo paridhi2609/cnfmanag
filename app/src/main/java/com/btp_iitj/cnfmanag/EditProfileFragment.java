@@ -23,13 +23,12 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewCOnference extends Fragment {
-    private EditText name, venue, date, description;
-    private Button save;
+public class EditProfileFragment extends Fragment {
+    public static EditText name, designation, dob, mobile, email;
+    public static Button save;
     private static final String TAG = "Suppport";
     private FirebaseFirestore db;
-
-    public NewCOnference() {
+    public EditProfileFragment() {
         // Required empty public constructor
     }
 
@@ -37,37 +36,35 @@ public class NewCOnference extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_new_conference, container, false);
-        name=view.findViewById(R.id.conf_name);
-        venue=view.findViewById(R.id.venue);
-        date=view.findViewById(R.id.date);
-        description=view.findViewById(R.id.description);
-        save=view.findViewById(R.id.SaveConf);
+        View view= inflater.inflate(R.layout.fragment_edit_profile, container, false);
+        name=view.findViewById(R.id.uname);
+        designation=view.findViewById(R.id.udesignation);
+        dob=view.findViewById(R.id.udob);
+        mobile= view.findViewById(R.id.uphone);
+        email=view.findViewById(R.id.uemail);
+        save=view.findViewById(R.id.save_user);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 final String name1=name.getText().toString();
-                final String venue1=venue.getText().toString();
-                final String date1=date.getText().toString();
-                final String description1=description.getText().toString();
-                Map<String, Object> conference = new HashMap<>();
+                final String designation1=designation.getText().toString();
+                final String dob1=dob.getText().toString();
+                final String mobile1=mobile.getText().toString();
+                final String email1=email.getText().toString();
+                Map<String, Object> conference_user = new HashMap<>();
                 db=FirebaseFirestore.getInstance();
-                conference.put("name",name1);
-                conference.put("venue",date1);
-                conference.put("date",date1);
-                conference.put("venue",venue1);
-                conference.put("description",description1);
-                Toast.makeText(getActivity(), "Data successfully Saved", Toast.LENGTH_SHORT).show();
-                name.setText("");
-                venue.setText("");
-                date.setText("");
-                description.setText("");
+                conference_user.put("name",name1);
+                conference_user.put("designation",designation1);
+                conference_user.put("dob",dob1);
+                conference_user.put("email",email1);
+                conference_user.put("mobile",mobile1);
+
+                Toast.makeText(getActivity(), "Data successfully Edited", Toast.LENGTH_SHORT).show();
 
 
-                db.collection("CONFERENCE").document()
-                        .set(conference)
+                db.collection("CONFERENCE_USER").document()
+                        .set(conference_user)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -82,6 +79,7 @@ public class NewCOnference extends Fragment {
                 });
             }
         });
+
 
         return view;
     }
